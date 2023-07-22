@@ -75,7 +75,6 @@ export class News extends Component {
   async fetchmoredata(){
     this.setState({page:this.state.page+1})
     let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&pageSize=${this.props.pageSize}&page=${this.state.page}`
-    this.setState({loading:true})
     let data= await fetch(url);
     let parsedData= await data.json();
     this.setState({articles:this.state.articles.concat(  parsedData.articles),total:parsedData.totalResults, page:this.state.page})
@@ -110,8 +109,8 @@ export class News extends Component {
       })}
       </div>
       </div>
-      </InfiniteScroll>}
-    
+      </InfiniteScroll> }
+     
       
 
    
