@@ -1,11 +1,11 @@
- import React, { Component } from 'react'
+ import React from 'react'
 import {Link} from 'react-router-dom'
 
-export class Newsitem extends Component {
+const Newsitem=(props)=> {
 
 
-  render() {
-    let {titlefornews,desc,imageurl,newsurl,author,date,source}=this.props;
+  
+    let {titlefornews,desc,imageurl,newsurl,author,date,source}=props;
     return (
       <div className='container my-3 mx-6'>
       <div className="card" style={{width: "18rem"}}>
@@ -22,7 +22,7 @@ export class Newsitem extends Component {
 </div>
       </div>
     )
-  }
+ 
 }
 
 export default Newsitem
